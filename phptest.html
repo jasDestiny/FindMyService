@@ -1,35 +1,4 @@
-<?php
-
-$a=$_POST["email"];
-$b=$_POST["fname"];
-$c=$_POST["psw"];
-$d=$_POST["age"];
-$e=$_POST["address"];
-
-$username="root";
-$password="admin";
-$port="127.0.0.1";
-
-$con=new mysqli("127.0.0.1","root","","javaProject");
-
-if(!$con)
-{
-	echo "connection to mysql failed<br>";
-}
-else
-{
-	echo "connection successful<br>";
-}
-
-$db="use userDb;";
-
-$el=mysqli_query($con,$db);
-
-$db="insert into userDb values('$a','$b','$c','$d','$e');";
-
-$el=mysqli_query($con,$db);
-
-echo"<html>
+<html>
 <head>
     <title>2nd page</title>
     <link href='2css.css' rel='stylesheet' type='text/css'>   
@@ -43,7 +12,7 @@ echo"<html>
             <a class='active' href='' style='margin-top:5px;'><i class='fa fa-fw fa-home'></i> Home </a>
             <a class='active' href='#' style='margin-top:5px;'><i class='fa fa-envelope'></i> Mail Box</a>
 			<a onclick='document.getElementById('id01').style.display='block'' style='width:auto; cursor:pointer; color: white; float:right;top:8;
-          position:relative;' ><i class='fa fa-user'> Hello $b</i> </a>
+          position:relative;' ><i class='fa fa-user'> Hello User</i> </a>
            <select class='custom-select'>
 					<option value='0'>Select domain </option>
 					<option value='1'>World wide</option>
@@ -287,6 +256,4 @@ document.addEventListener('click', closeAllSelect);
    </div>
        </header>
     </body>
-</html>";
-
-?>
+</html>
